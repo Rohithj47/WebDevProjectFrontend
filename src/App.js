@@ -8,7 +8,6 @@ import GlobalStyles from "styles/GlobalStyles";
 import HomePage from "pages/HomePage";
 import SearchPage from "pages/SearchPage";
 import BreweryPage from "components/cards/BreweryPage";
-// import NotFoundPage from "pages/NotFoundPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useCallback, useContext, useEffect } from "react";
@@ -59,7 +58,6 @@ export default function App() {
           <Route path="/login" element={<h1>LoginPage</h1>} />
           {/* <Route path="/register" element={<SignupPage />} /> */}
           <Route path="/register" element={<h1>SignupPage</h1>} />
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </Router>
