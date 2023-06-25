@@ -6,8 +6,8 @@ import GlobalStyles from "styles/GlobalStyles";
 // import ProfilePage from "pages/Profile.js";
 
 import HomePage from "pages/HomePage";
-import SearchPage from "pages/SearchPage";
-import BreweryPage from "components/cards/BreweryPage";
+// import SearchPage from "pages/SearchPage";
+// import BreweryPage from "components/cards/BreweryPage";
 // import NotFoundPage from "pages/NotFoundPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -51,10 +51,10 @@ export default function App() {
           {/* <Route path="/profile" element={<ProfilePage />} /> */}
           <Route path="/profile" element={<h1>ProfilePage</h1>} />
           {/* <Route path="/profile/:uid" element={<ProfilePage />} /> */}
-          <Route path="/search" element={<SearchPage />} />
-          {/* <Route path="/search" element={<h1>SearchPage</h1>} /> */}
-          <Route path="/brewery/:bid" element={<BreweryPage />} />
-          {/* <Route path="/brewery/:bid" element={<h1>BreweryPage</h1>} /> */}
+          {/* <Route path="/search" element={<SearchPage />} /> */}
+          <Route path="/search" element={<h1>SearchPage</h1>} />
+          {/* <Route path="/brewery/:bid" element={<BreweryPage />} /> */}
+          <Route path="/brewery/:bid" element={<h1>BreweryPage</h1>} />
           {/* <Route path="/login" element={<LoginPage />} /> */}
           <Route path="/login" element={<h1>LoginPage</h1>} />
           {/* <Route path="/register" element={<SignupPage />} /> */}
