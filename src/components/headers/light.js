@@ -10,30 +10,23 @@ import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+import { Nav } from "react-bootstrap";
 
 const Header = tw.header`
   flex justify-between items-center
   max-w-screen-xl mx-auto
 `;
 
-export const NavLinks = tw.div`inline-block`;
+export const NavLinks = tw.div`inline-block `;
 
 export const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
-  font-semibold tracking-wide transition duration-300
-  pb-1 border-b-2 border-transparent hover:border-primary-500 hocus:text-primary-500
-`;
-
-export const PrimaryLink = tw(NavLink)`
-  lg:mx-0
-  px-8 py-3 rounded bg-primary-500 text-gray-100
-  hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline
-  border-b-0
+  font-bold tracking-wide transition duration-300
+  pb-1 border-b-2 border-transparent hover:border-blue-500 
 `;
 
 export const LogoLink = styled(NavLink)`
   ${tw`flex items-center font-black border-b-0 text-2xl! ml-0!`};
-
   img {
     ${tw`w-10 mr-3`}
   }
@@ -93,7 +86,7 @@ export default ({
         )
       }
       {userContext.token !== null && (
-        <PrimaryLink tw="lg:ml-12!" onClick={logoutHandler}>Logout</PrimaryLink>
+        <NavLink tw="lg:ml-12!" onClick={logoutHandler}>Logout</NavLink>
       )}
       {userContext.token === null && (
         <>
@@ -101,7 +94,7 @@ export default ({
             <NavLink tw="lg:ml-12!">Login</NavLink>
           </Link>
           <Link to="/register" style={{ marginTop: "1rem" }}>
-            <PrimaryLink>Sign Up</PrimaryLink>
+            <NavLink>Sign Up</NavLink>
           </Link>
         </>
       )}
@@ -131,6 +124,7 @@ export default ({
       <MobileNavLinksContainer
         css={collapseBreakpointCss.mobileNavLinksContainer}
       >
+        {/* {logoLink} */}
         <MobileNavLinks
           initial={{ x: "150%", display: "none" }}
           animate={animation}
