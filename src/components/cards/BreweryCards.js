@@ -5,12 +5,11 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
-import { SectionHeading } from "components/misc/Headings.js";
 
 import { breweryImages } from "helpers/imageSources";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
-const Header = tw(SectionHeading)`text-black font-thin uppercase underline`;
+const Header = tw.div`text-4xl sm:text-5xl text-center text-black font-thin uppercase underline`;
 const CardContainer = tw.div``;
 
 const Card = tw(

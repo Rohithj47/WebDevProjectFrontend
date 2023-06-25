@@ -4,8 +4,7 @@ import Slider from "react-slick";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { UserContext } from "../../context/UserContext"
-import { SectionHeading } from "components/misc/Headings";
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons";
+// import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons";
 import { ReactComponent as LocationIcon } from "feather-icons/dist/icons/map-pin.svg";
 import { ReactComponent as ChevronLeftIcon } from "feather-icons/dist/icons/chevron-left.svg";
 import { ReactComponent as ChevronRightIcon } from "feather-icons/dist/icons/chevron-right.svg";
@@ -13,14 +12,15 @@ import { ReactComponent as PhoneIcon } from "feather-icons/dist/icons/phone.svg"
 import { ReactComponent as MapIcon } from "feather-icons/dist/icons/map.svg";
 
 import { breweryImages } from "helpers/imageSources";
-import { getFormattedPhoneNumber } from "helpers/dataUtil";
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-16 lg:py-20`;
 
 const HeadingWithControl = tw.div`flex flex-col items-center sm:items-stretch sm:flex-row justify-between`;
-const Heading = tw(SectionHeading)`text-black font-thin uppercase underline`;
+const Heading = tw.div`text-4xl sm:text-5xl text-center text-black font-thin uppercase underline`;
 const Controls = tw.div`flex items-center`;
+const PrimaryButtonBase = tw.button`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300`;
+
 const ControlButton = styled(PrimaryButtonBase)`
   ${tw`mt-4 sm:mt-0 first:ml-0 ml-6 rounded-full p-2`}
   svg {
@@ -179,7 +179,7 @@ export default () => {
                                             <IconContainer>
                                                 <PhoneIcon />
                                             </IconContainer>
-                                            <Text as="a" href={"tel:" + card.phone} target="_blank">{getFormattedPhoneNumber(card.phone)}</Text>
+                                            <Text as="a" href={"tel:" + card.phone} target="_blank">{card.phone}</Text>
                                         </IconWithText>
                                     </SecondaryInfoContainer>
                                     <SecondaryInfoContainer>

@@ -4,13 +4,12 @@ import Header from "components/headers/light.js";
 import BreweryCity from "components/cards/BreweryCity";
 import BreweryHero from "components/hero/BreweryHero";
 import BreweryCards from "components/cards/BreweryCards";
-import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 
 export default () => {
   const [currUser] = useContext(UserContext);
 
   return (
-    <AnimationRevealPage disabled>
+    <div>
       {!currUser.token &&
         <BreweryHero />
       }
@@ -21,12 +20,8 @@ export default () => {
         </>
       }
       <BreweryCards
-        heading={
-          <>
-            Featured Breweries
-          </>
-        }
+        heading={<>Featured Breweries</>}
       />
-    </AnimationRevealPage>
+    </div>
   );
 }
